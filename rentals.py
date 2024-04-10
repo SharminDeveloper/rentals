@@ -320,7 +320,10 @@ class Rentals:
         self.garage_parking_function(self.garage_parking)
         self.driver.find_element(By.XPATH , "//div[@class='css-1r5azra e1k4it830']//button[2]").click()
         sleep(5)
-        self.find_locations_function()
+        try:
+            self.find_locations_function()
+        except:
+            return []
         self.open_tabs()
         locations_prices = []
         for window_index in range(len(self.driver.window_handles)):
