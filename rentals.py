@@ -323,6 +323,7 @@ class Rentals:
         try:
             self.find_locations_function()
         except:
+            self.driver.quit()
             return []
         self.open_tabs()
         locations_prices = []
